@@ -1,13 +1,32 @@
 function hasTargetSum(array, target) {
   // Write your algorithm here
+  
+  for(let i = 0; i < array.length; i++)
+  {
+    for(let j = i + 1; j < array.length; j++)
+    {
+      let sum = array[i] + array[j]
+      console.log(sum, target)
+      if(sum === target)
+      {
+        return true
+      }
+   
+    }
+  }
+  return false
 }
 
 /* 
-  Write the Big O time complexity of your function here
+* Write the Big O time complexity of your function here
+ * O(n)
 */
 
 /* 
-  Add your pseudocode here
+ * Add your pseudocode here
+ * sum = 0
+ * loop through each element of array 
+ * Take first index and loop through the rest finding one that will add up to target
 */
 
 /*
@@ -15,6 +34,7 @@ function hasTargetSum(array, target) {
 */
 
 // You can run `node index.js` to view these console logs
+
 if (require.main === module) {
   // add your own custom tests in here
   console.log("Expecting: true");
@@ -32,3 +52,4 @@ if (require.main === module) {
 }
 
 module.exports = hasTargetSum;
+console.log(hasTargetSum([-7, 10, 4, 8], 3));
